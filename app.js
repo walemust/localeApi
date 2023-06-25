@@ -9,7 +9,7 @@ const router = require("./routes/nigeriaData.route");
 
 app.use(require("./utils/middlewares/rateLimiter"));
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended : true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 //middleware to grab post/patch requests as json files or other files
 app.use(express.json());
@@ -18,7 +18,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send({
         success: true,
-        message: " Welcome to NIG Locale service"
+        message: " Welcome to NIGERIA Locale service"
     })
 });
 
@@ -29,7 +29,7 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/search", router);
 
 //404 handler
-app.all( "*", require("./utils/error/404.error"))
+app.all("*", require("./utils/error/404.error"))
 //global error handler
 app.use(require("./utils/error/globalError"))
 

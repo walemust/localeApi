@@ -7,12 +7,12 @@ class Cache {
     async connect() {
         try {
             this.redis = await Redis.createClient({
-                password: 'Progress24?!',
-                socket: {
-                    host: 'redis-11991.c1.us-east1-2.gce.cloud.redislabs.com',
-                    port: 11991
-                }
-                //url : CONFIG.redis_url             
+                // password: 'Progress24?!',
+                // socket: {
+                //     host: 'redis-11991.c1.us-east1-2.gce.cloud.redislabs.com',
+                //     port: 11991
+                // }
+                url: CONFIG.redis_url
             });
             this.redis.connect()
             this.redis.on("connect", () => console.log('redis connected'))
