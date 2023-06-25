@@ -1,0 +1,37 @@
+{
+  "name": "locale_app",
+  "version": "1.0.0",
+  "description": "Locale is a developer tool for anyone who needs to know Nigeria geographically",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "prod": "cross-env NODE_ENV=production nodemon server.js",
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "test": "jest --watchAll --detectOpenHandles --testTimeout=10000000"
+  },
+  "keywords": [
+    "Nigeria",
+    "geography",
+    "Map"
+  ],
+  "author": "Mustapha Olawale Babatunde",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "http-errors": "^2.0.0",
+    "mongoose": "^7.1.1",
+    "redis": "^4.6.7",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "mongodb-memory-server": "^8.13.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
+  }
+}

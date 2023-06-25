@@ -1,0 +1,65 @@
+###
+GET http://localhost:3000/test/Kano
+Content-Type: application/json
+
+
+###
+GET http://localhost:3000/api/v1/search
+Content-Type: application/json
+
+###
+GET http://localhost:3000/api/v1/search/regions
+Content-Type: application/json
+
+###
+GET http://localhost:3000/api/v1/search/states
+Content-Type: application/json
+
+
+###
+GET http://localhost:3000/api/v1/search/region-state
+Content-Type: application/json
+
+
+###
+GET http://localhost:3000/api/v1/search/state-lga
+Content-Type: application/json
+
+
+###
+GET http://localhost:3000/api/v1/search/state-data
+Content-Type: application/json
+
+
+###
+GET http://localhost:3000/api/v1/search/regions/South%20East
+Content-Type: application/json
+
+###
+GET http://localhost:3000/api/v1/search/states/Delta
+
+
+### 
+POST http://localhost:3000/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "username" : "jane",
+    "email" : "jdoe@xyz.com",
+    "password" : "1234567"
+}
+### 
+POST http://localhost:3000/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "email" :  "jane@xyz.com",
+    "password" : "1234567"
+}
+
+###
+DELETE  http://localhost:3000/delete
+
+###
+POST  http://localhost:3000/upload
+
