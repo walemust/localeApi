@@ -7,7 +7,8 @@
     "start": "node server.js",
     "prod": "cross-env NODE_ENV=production nodemon server.js",
     "dev": "cross-env NODE_ENV=development nodemon server.js",
-    "test": "jest --watchAll --detectOpenHandles --testTimeout=10000000"
+    "test": "jest --watchAll --detectOpenHandles --testTimeout=10000000",
+    "swagger-autogen": "node ./swagger.js"
   },
   "keywords": [
     "Nigeria",
@@ -26,6 +27,9 @@
     "http-errors": "^2.0.0",
     "mongoose": "^7.1.1",
     "redis": "^4.6.7",
+    "swagger-autogen": "^2.23.4",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
