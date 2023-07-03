@@ -5,7 +5,7 @@ const app = express();
 const authRouter = require("./routes/auth.route");
 const router = require("./routes/nigeriaData.route");
 
-const newSwag = JSON.parse(await readfile(new URL('./swagger-output.json', import.meta.url)))
+const newSwag = JSON.parse(readfile(new URL('./swagger-output.json', import.meta.url)))
 
 
 app.use(require("./utils/middlewares/rateLimiter"));
@@ -34,6 +34,6 @@ app.all("*", require("./utils/error/404.error"))
 //global error handler
 app.use(require("./utils/error/globalError"))
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(newSwag, {explorer:true}));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(newSwag, { explorer: true }));
 
 module.exports = app
