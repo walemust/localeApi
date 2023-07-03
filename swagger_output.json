@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "mongodb+srv://walemust:Progress24@cluster0.7skdinx.mongodb.net/LocaleApi?retryWrites=true&w=majority",
+  "host": "https://nigeria-locale-api.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",

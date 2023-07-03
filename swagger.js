@@ -3,14 +3,14 @@ const dotenv = require("dotenv");
 
 dotenv.config()
 
-console.log(process.env.mongo_uri)
+console.log(process.env.host_url)
 
 const doc = {
     info: {
         title: 'Nigerian Locale API',
         description: 'Description',
     },
-    host: process.env.mongo_uri,
+    host: process.env.host_url,
     schemes: ['http', 'https'],
 };
 
