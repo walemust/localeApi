@@ -12,7 +12,7 @@ class Cache {
                 //     host: 'redis-11991.c1.us-east1-2.gce.cloud.redislabs.com',
                 //     port: 11991
                 // }
-                url: CONFIG.redis_url
+                url: process.env.REDIS_URL
             });
             this.redis.connect()
             this.redis.on("connect", () => console.log('redis connected'))
