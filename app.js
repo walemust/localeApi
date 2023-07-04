@@ -45,4 +45,4 @@ async function startApp() {
 
 startApp();
 
-module.exports = app
+module.exports = app;

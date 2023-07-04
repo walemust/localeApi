@@ -2,7 +2,7 @@
   "name": "locale_app",
   "version": "1.0.0",
   "description": "Locale is a developer tool for anyone who needs to know Nigeria geographically",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "prod": "cross-env NODE_ENV=production nodemon server.js",
