@@ -1,5 +1,6 @@
 const swaggerUi = require('swagger-ui-express');
 const express = require("express");
+const cors = require('cors');
 const bodyParser = require("body-parser");
 const fs = require('fs').promises;
 const path = require('path');
@@ -15,6 +16,7 @@ async function startApp() {
         const newSwag = JSON.parse(swaggerData);
         //const newSwag = JSON.parse(await readfile(new URL('./swagger-output.json', import.meta.url)))
 
+        app.use(cors());
         app.use(require("./utils/middlewares/rateLimiter"));
         app.use(bodyParser.json())
         app.use(bodyParser.urlencoded({ extended: true }))
