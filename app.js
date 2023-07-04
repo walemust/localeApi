@@ -10,7 +10,7 @@ const router = require("./routes/nigeriaData.route");
 
 async function startApp() {
     try {
-        const swaggerFilePath = path.resolve(__dirname, 'swagger-output.json');
+        const swaggerFilePath = path.resolve(__dirname, './swagger-output.json');
         const swaggerData = await fs.readFile(swaggerFilePath, 'utf8');
         const newSwag = JSON.parse(swaggerData);
         //const newSwag = JSON.parse(await readfile(new URL('./swagger-output.json', import.meta.url)))
