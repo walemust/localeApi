@@ -218,7 +218,7 @@ GET / api / v1 / search / regions;
 
 ## Documentation
 
-To further Understand the API, Click [here](https://nigeria-locale-api.onrender.com/) to access the live link to the documentation.
+To further Understand the API, Click [here](https://nigeria-locale-api.onrender.com/docs) to access the live link to the documentation.
 
 - [Swagger](https://swagger.io/resources/articles/documenting-apis-with-swagger/) was used for documentation.
 
