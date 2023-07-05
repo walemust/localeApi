@@ -5,7 +5,8 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "https://nigeria-locale-api.onrender.com",
+  "host": "nigeria-locale-api.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http",
