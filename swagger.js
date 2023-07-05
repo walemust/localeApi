@@ -9,7 +9,7 @@ const doc = {
         description: 'Description',
     },
     host: process.env.HOST_URL,
-    schemes: ['http', 'https'],
+    schemes: ['https', 'https'],
 };
 
 const outputFile = './swagger_output.json';
