@@ -21,6 +21,7 @@ async function startApp() {
     const swaggerData = await fs.readFile(swaggerFilePath, "utf8");
     const newSwag = JSON.parse(swaggerData);
 
+    
     //const newSwag = JSON.parse(await readfile(new URL('./swagger-output.json', import.meta.url)))
     // var corsOptions = {
     //   origin: '*',
