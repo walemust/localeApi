@@ -7,4 +7,4 @@ const limiter = rateLimit({
   message: 'Too many requests, please try again in (15)minutes.',
 });
 
-module.exports = rateLimiter;
+module.exports = limiter;
