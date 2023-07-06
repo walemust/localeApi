@@ -6,6 +6,7 @@ const User = require("../model/auth.model");
 
 const validateApiKey = (async (req, res, next) =>{
     const apiKey = req.query.apiKey
+    
     try {
         if(!apiKey){
             return res.status(401).json({errorMessage: `You're authorized! Kind add your "apiKey" as a query`})

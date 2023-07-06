@@ -2,11 +2,29 @@ const NaijaData = require("../model/naija.model");
 const Cache = require("../utils/CONFIG/redis.config");
 const asyncHandler = require("../utils/middlewares/AsyncHandler");
 const CustomError = require("../utils/error/customError");
+const states = require("../nigeria-states-and-local-govts/r-s-l.json")
+
+//function to populate states
+exports.addStates = asyncHandler(async (req, res, next) => {
+   //import that json file
+   //console.log(states)
+   // console.log(JSON.parse(states))
+   states.geopolitical_regions.forEach(async region => {
+      const state = new NaijaData({
+         name: region.name,
+         states: region.states
+      })
+      await state.save()
+   });
+   const regions = await NaijaData.find()
+   res.status(200).json(regions);
+})
+
 
 //function to get full Json file of Nigeria regions, states,lgas and metadata
 exports.getData = asyncHandler(async (req, res, next) => {
-
-   const nigeriaData = await NaijaData.find({});
+   
+   const nigeriaData = await NaijaData.find();
    if (process.env.NODE_ENV !== 'test') {
       //set cache
       const cacheKey = req.originalUrl.toLowerCase();
@@ -17,7 +35,7 @@ exports.getData = asyncHandler(async (req, res, next) => {
 
 //function to get  Nigeria regions ONLY
 exports.getRegions = asyncHandler(async (req, res, next) => {
-
+   console.log("im here")
    const nigeriaData = await NaijaData.find({});
    if (!nigeriaData) {
       const error = new CustomError("file not found!", 404);
@@ -71,11 +89,13 @@ exports.getRegionState = asyncHandler(async (req, res, next) => {
          )
       }
    }))
+   console.log(regionState)
    if (process.env.NODE_ENV !== 'test') {
       //set cache
       const cacheKey = req.originalUrl.toLowerCase();
       Cache.redis.SETEX(cacheKey, 3600, JSON.stringify(regionState));
    }
+   
    res.status(200).json(regionState)
 
 })
@@ -163,7 +183,7 @@ exports.getOneState = asyncHandler(async (req, res, next) => {
 
    const nigeriaData = await NaijaData.find({});
    if (!nigeriaData) {
-     
+
       return next();
    }
    const states = []
@@ -185,10 +205,10 @@ exports.getOneState = asyncHandler(async (req, res, next) => {
       if (statesResult[i].state == stateName) {
 
          const data = statesResult[i]
-         if(process.env.NODE_ENV !== 'test') {
-         //set cache
-         const cacheKey = req.originalUrl.toLowerCase();
-         Cache.redis.SETEX(cacheKey, 3600, JSON.stringify(data));
+         if (process.env.NODE_ENV !== 'test') {
+            //set cache
+            const cacheKey = req.originalUrl.toLowerCase();
+            Cache.redis.SETEX(cacheKey, 3600, JSON.stringify(data));
          }
          return res.status(200).json(statesResult[i]);
       }

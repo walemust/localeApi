@@ -5,9 +5,20 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "nigeria-locale-api.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
-  "schemes": ["https", "https"],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "BearerAuth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Bearer Token"
+    }
+  },
   "paths": {
     "/": {
       "get": {
@@ -76,6 +87,16 @@
         }
       }
     },
+    "/api/v1/search/add": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/v1/search/": {
       "get": {
         "description": "",
@@ -106,7 +127,7 @@
         }
       }
     },
-    "/api/v1/search/region-state": {
+    "/api/v1/search/region-states": {
       "get": {
         "description": "",
         "responses": {
@@ -116,7 +137,7 @@
         }
       }
     },
-    "/api/v1/search/state-lga": {
+    "/api/v1/search/state-lgas": {
       "get": {
         "description": "",
         "responses": {
@@ -165,26 +186,6 @@
             "type": "string"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/search/region-states": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/search/state-lgas": {
-      "get": {
-        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -249,6 +250,16 @@
         }
       }
     },
+    "/add": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/regions": {
       "get": {
         "description": "",
@@ -269,7 +280,7 @@
         }
       }
     },
-    "/region-state": {
+    "/region-states": {
       "get": {
         "description": "",
         "responses": {
@@ -279,7 +290,7 @@
         }
       }
     },
-    "/state-lga": {
+    "/state-lgas": {
       "get": {
         "description": "",
         "responses": {
@@ -334,26 +345,11 @@
           }
         }
       }
-    },
-    "/region-states": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/state-lgas": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
     }
-  }
+  },
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ]
 }
