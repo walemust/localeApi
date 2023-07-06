@@ -7,7 +7,7 @@
   },
   "host": "nigeria-locale-api.onrender.com",
   "basePath": "/",
-  "schemes": ["http", "https"],
+  "schemes": ["https", "http"],
   "securityDefinitions": {
     "BearerAuth": {
       "type": "apiKey",

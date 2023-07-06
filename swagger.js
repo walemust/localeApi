@@ -9,7 +9,7 @@ const doc = {
         description: 'Description',
     },
     host: process.env.HOST_URL,
-    schemes: ['http', 'https'],
+    schemes: ['https', 'http'],
     securityDefinitions: {
         BearerAuth: {
             type: 'apiKey',
