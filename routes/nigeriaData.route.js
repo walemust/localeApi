@@ -3,7 +3,7 @@ const express = require("express")
 const cacheMiddleware = require("../utils/middlewares/cache.middleware")
 const validateApiKey = require("../utils/middlewares/authMiddleWare")
 const {
-    addStates,
+    //addStates,
     getData,
     getRegions,
     getStates,
@@ -17,7 +17,7 @@ const {
 const router = express.Router();
 
 if (process.env.NODE_ENV === 'test') {
-    router.get("/add", validateApiKey, addStates);
+    //router.get("/add", validateApiKey, addStates);
     router.get("/", validateApiKey, getData);
     router.get("/regions", validateApiKey, getRegions);
     router.get("/states", validateApiKey, getStates);
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'test') {
     router.get("/states/:stateName", validateApiKey, getOneState);
 } else {
 
-    router.get("/add", validateApiKey, cacheMiddleware, addStates);
+    //router.get("/add", validateApiKey, cacheMiddleware, addStates);
     router.get("/", validateApiKey, cacheMiddleware, getData);
     router.get("/regions", validateApiKey, cacheMiddleware, getRegions);
     router.get("/states", validateApiKey, cacheMiddleware, getStates);

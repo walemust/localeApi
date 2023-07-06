@@ -5,20 +5,20 @@ const CustomError = require("../utils/error/customError");
 //const states = require("../nigeria-states-and-local-govts/r-s-l.json")
 
 //function to populate states
-exports.addStates = asyncHandler(async (req, res, next) => {
-   //import that json file
-   //console.log(states)
-   // console.log(JSON.parse(states))
-   states.geopolitical_regions.forEach(async region => {
-      const state = new NaijaData({
-         name: region.name,
-         states: region.states
-      })
-      await state.save()
-   });
-   const regions = await NaijaData.find()
-   res.status(200).json(regions);
-})
+// exports.addStates = asyncHandler(async (req, res, next) => {
+//    //import that json file
+//    //console.log(states)
+//    // console.log(JSON.parse(states))
+//    states.geopolitical_regions.forEach(async region => {
+//       const state = new NaijaData({
+//          name: region.name,
+//          states: region.states
+//       })
+//       await state.save()
+//    });
+//    const regions = await NaijaData.find()
+//    res.status(200).json(regions);
+// })
 
 
 //function to get full Json file of Nigeria regions, states,lgas and metadata

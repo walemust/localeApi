@@ -84,16 +84,6 @@
         }
       }
     },
-    "/api/v1/search/add": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/v1/search/": {
       "get": {
         "description": "",
@@ -240,16 +230,6 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/add": {
-      "get": {
-        "description": "",
         "responses": {
           "200": {
             "description": "OK"
