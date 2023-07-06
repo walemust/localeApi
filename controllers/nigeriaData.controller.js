@@ -5,7 +5,7 @@ const CustomError = require("../utils/error/customError");
 
 //function to get full Json file of Nigeria regions, states,lgas and metadata
 exports.getData = asyncHandler(async (req, res, next) => {
-
+   console.log("got here")
    const nigeriaData = await NaijaData.find({});
    if (process.env.NODE_ENV !== 'test') {
       //set cache
@@ -163,7 +163,7 @@ exports.getOneState = asyncHandler(async (req, res, next) => {
 
    const nigeriaData = await NaijaData.find({});
    if (!nigeriaData) {
-     
+
       return next();
    }
    const states = []
@@ -185,10 +185,10 @@ exports.getOneState = asyncHandler(async (req, res, next) => {
       if (statesResult[i].state == stateName) {
 
          const data = statesResult[i]
-         if(process.env.NODE_ENV !== 'test') {
-         //set cache
-         const cacheKey = req.originalUrl.toLowerCase();
-         Cache.redis.SETEX(cacheKey, 3600, JSON.stringify(data));
+         if (process.env.NODE_ENV !== 'test') {
+            //set cache
+            const cacheKey = req.originalUrl.toLowerCase();
+            Cache.redis.SETEX(cacheKey, 3600, JSON.stringify(data));
          }
          return res.status(200).json(statesResult[i]);
       }
