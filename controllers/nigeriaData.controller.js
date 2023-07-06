@@ -2,7 +2,7 @@ const NaijaData = require("../model/naija.model");
 const Cache = require("../utils/CONFIG/redis.config");
 const asyncHandler = require("../utils/middlewares/AsyncHandler");
 const CustomError = require("../utils/error/customError");
-const states = require("../nigeria-states-and-local-govts/r-s-l.json")
+//const states = require("../nigeria-states-and-local-govts/r-s-l.json")
 
 //function to populate states
 exports.addStates = asyncHandler(async (req, res, next) => {
